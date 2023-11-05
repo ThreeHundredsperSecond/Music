@@ -70,18 +70,18 @@
 1) Пропуски присутствуют в языках и **isrc**   
 2) Топ 10 жанров :'FOLK', 'LATINFOLK', 'POP', 'ALLROCK', 'ROCK', 'ALTERNATIVE','ELECTRONICS', 'SOUNDTRACK', 'RAP', 'DANCE'  
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%204.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%204.png)  
 
 3) Наиболее популярные языки: Английский, Испанский, Русский  
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%205.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%205.png)  
 
 4) Самое раннее упоминание из столбца ddtm - 08.2009, последнее упоминание - 2023.10, наибольшее упоминание треков приходится на октябрь-ноябрь
 5) Большая часть данных, судя по всему, не имеет каверов, треки с первым и единственным упоминанием доминируют в данных, если не брать во внимание случаи одинаковых названий
 6) Для столбца **isrc** извлекли признаки, проверили на корректность, существуют треки для которых один **isrc** для разных **track_id**, возможно из-за того что один трек входит в разные альбомы
 7) Дата из **isrc** не всегда совпадает с датой в **ddtm**, есть аномалии с данными больше чем 23 год и их нельзя найти в базе
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%206.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%206.png)  
 
 
 ## Подготовка признаков
@@ -111,7 +111,7 @@
   
 По интересующим нас признакам рассчитали матрицу корреляции:
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%207.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%207.png)  
 
 Видно, что есть сильная связь между целевой переменной и признаками: ид. эмитента (сокращенной и полной), код страны, язык, год выпуска).
 Присутствует мультиколлинеарность между признаками, сгенерированными из isrc, языком и годом из dttm.
@@ -119,12 +119,12 @@
 
 Были определены наиболее важные признаки для модели с использованием атрибута feature_importances_ и библиотеки shap:
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%209.png)  
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%2010.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%209.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%2010.png)  
 
 По полученным результатам была обучена финальная модель:
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%208.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%208.png)  
 
 ### Вывод  
 Для музыкальных треков из имеющихся данных были созданы 137 новых признаков (129 признаков-жанров), обучена модель на 85% данных с известными значениями столбца 'track_remake_type' и протестирована на оставшихся. Для данной модели не использовалось содержание заголовков и текста песен, а лишь их размер, а также извлекалась возможная полезная информация из заголовков (год и упоминание "cover").
@@ -319,9 +319,9 @@ ORIGINAL     86 штук
 
 В качестве классификатора мы возьмем модель CatBoost: 
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%2013.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%2012.png)  
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%2012.png) 
+![alt text](https://github.com/ThreeHundredsperSecond/Yandex_Music/blob/main/image/%D0%A0%D0%B8%D1%81%2013.png) 
 
 Точность модели на тестовой выборке составляет около 90%. Это значит, что на отобранных данных, возможно проклассифицировать по COVER/ORIGINAL с точностью 90%.
 
