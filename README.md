@@ -55,7 +55,7 @@
 ### Файл **covers.json**:  
 1) соотношение треков оригинал/кавер - 6%/94%  
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%202.png)  
+![alt text](https://github.com/ThreeHundredsperSecond/Music/blob/main/image/%D0%A0%D0%B8%D1%81%202.png)  
 
 2) Имеется большое количество пропусков в колонке **original_track_id** (66776 из 71597). Это сильно ограничивает количество данных и усложняет работу с моделями.
 
@@ -64,7 +64,7 @@
 2) Если посмотреть на длину треков, то видно, что есть сильно короткие и невероятно длинные треки. Это может быть связано как со спецификой треков, так и с возможными ошибками в данных. Медианная длина текста находится в 1165 символах  
 
 
-![alt text](https://github.com/raphael12/YandexMusic/blob/main/images/%D0%A0%D0%B8%D1%81%203.png) 
+![alt text](https://github.com/ThreeHundredsperSecond/Music/blob/main/image/%D0%A0%D0%B8%D1%81%203.png) 
 
 ### Файл **meta.json**:  
 1) Пропуски присутствуют в языках и **isrc**   
